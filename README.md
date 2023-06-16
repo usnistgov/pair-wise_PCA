@@ -1,13 +1,19 @@
 ## Pairwise PCA Inspection Tool
 This project is a part of [SDNist project](https://github.com/usnistgov/SDNist)
 
+This tool allows interactive exploration and highlighting of records in the Pairwise PCA Plot 
+metric (see the SDNist Synthetic Data Evaluation library for more on this metric). 
+The tool should be installed in the same overall directory as the [crc data and metrics bundle](https://github.com/usnistgov/privacy_collaborative_research_cycle/tree/research-acceleration-bundle/crc_data_and_metric_bundle_1.0)
+and can be used to investigate scatterplots from all of the deidentified data samples in the bundle.
+
+
 Version: 1.0.0
 Date: June 16, 2023
  
 
 ### Instructions to run the tool
 NOTE: The ***pca>*** string in the commands below indicates that the user is in the **pca** directory.
-1. Create a new directory **pca**.
+1. Create a new directory **pca** inside **"crc_data_and_metric_bundle"** directory.
 2. Download the **pairwise_pcatool-1.0.0-py3-none-any.whl** file from the [releases]()
 3. Open terminal or powershell and navigate to the **pca** directory.
 4. Now using opened terminal or powershell create a new python virtual environment.
