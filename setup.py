@@ -22,7 +22,7 @@ setup(
               "pcatool.views.main.controls"],
     install_requires=[
         "matplotlib==3.7.1",
-        "numpy==1.24.3",
+        "numpy==1.22.0",
         "pandas==2.0.1",
         "pygame==2.4.0",
         "requests==2.30.0",
