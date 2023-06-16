@@ -1,10 +1,6 @@
 ## Pairwise PCA Inspection Tool
 This project is a part of [SDNist project](https://github.com/usnistgov/SDNist)
 
-Authors:  
-[Karan Bhagat](mailto:kb.in.triangulum@gmail.com), 
-[Christine Task](mailto:christine.task@knexusresearch.com)
-
 Version: 1.0.0
 Date: June 16, 2023
  
@@ -46,3 +42,11 @@ NOTE: The ***pca>*** string in the commands below indicates that the user is in 
     ```
    (venv)pca> pctool
     ```
+   
+
+Credits 
+----------
+
+- [Christine Task](mailto:christine.task@knexusresearch.com) - Project technical lead - christine.task@knexusresearch.com
+- [Karan Bhagat](https://github.com/kbtriangulum) - Contributor
+- [Gary Howarth](https://www.nist.gov/people/gary-howarth) - Project PI - gary.howarth@nist.gov
