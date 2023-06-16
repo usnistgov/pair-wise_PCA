@@ -14,7 +14,7 @@ Date: June 16, 2023
 ### Instructions to run the tool
 NOTE: The ***pca>*** string in the commands below indicates that the user is in the **pca** directory.
 1. Create a new directory **pca** inside **"crc_data_and_metric_bundle"** directory.
-2. Download the **pairwise_pcatool-1.0.0-py3-none-any.whl** file from the [releases]()
+2. Download the **pairwise_pcatool-1.0.0-py3-none-any.whl** file from the [releases](https://github.com/usnistgov/pair-wise_PCA/releases/tag/v1.0.0/)
 3. Open terminal or powershell and navigate to the **pca** directory.
 4. Now using opened terminal or powershell create a new python virtual environment.
     ```
