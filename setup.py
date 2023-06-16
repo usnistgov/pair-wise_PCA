@@ -25,7 +25,7 @@ setup(
         "numpy==1.24.3",
         "pandas==2.0.1",
         "pygame==2.4.0",
-        "requests==2.30.0",
+        "requests==2.31.0",
         "scikit-learn==1.2.2",
         "tqdm==4.65.0",
     ],
