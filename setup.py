@@ -27,7 +27,7 @@ setup(
         "pygame==2.4.0",
         "requests==2.30.0",
         "scikit-learn==1.2.2",
-        "tqdm==4.65.0",
+        "tqdm==4.66.3",
     ],
     classifiers=['Development Status :: 5 - Production/Stable',
                  'Programming Language :: Python :: 3.8',
