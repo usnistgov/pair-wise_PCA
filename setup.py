@@ -26,7 +26,7 @@ setup(
         "pandas==2.0.1",
         "pygame==2.4.0",
         "requests==2.30.0",
-        "scikit-learn==1.2.2",
+        "scikit-learn==1.5.0",
         "tqdm==4.65.0",
     ],
     classifiers=['Development Status :: 5 - Production/Stable',
