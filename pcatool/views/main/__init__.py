@@ -217,6 +217,14 @@ def pygame_gui(width: int,
         for e in pygame.event.get():
             if e.type == pygame.QUIT:
                 exit_program = True
+            elif e.type == pygame.WINDOWDISPLAYCHANGED:
+                pygame.display.update()
+                updates.add(TARGET_PCA_GRID)
+                updates.add(DEID_PCA_GRID)
+                updates.add(TARGET_PCA_PAIR)
+                updates.add(DEID_PCA_PAIR)
+                updates.add(CONTROL)
+                updates.add(MENUBAR)
             if e.type == pygame.MOUSEMOTION:
                 mouse_pos = pygame.mouse.get_pos()
                 updates = updates.union({k for k, v in name_to_views.items()

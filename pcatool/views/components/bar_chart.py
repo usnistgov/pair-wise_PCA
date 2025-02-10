@@ -73,19 +73,19 @@ class BarChart:
             w = int((max_bar_w / max_val) * abs(row[0]))
             h = bar_height
 
-            if row[0] > 0:
+            if row.iloc[0] > 0:
                 bar_rect = pygame.Rect(x, y, w, h)
                 pygame.draw.rect(surface, "green", bar_rect)
-                text_surface = self.font.render(f'{idx}({round(row[0], 2)})',
+                text_surface = self.font.render(f'{idx}({round(row.iloc[0], 2)})',
                                                 True, 'black')
                 text_rect = text_surface.get_rect(center=(0, 0))
                 text_rect.center = (x_center - text_rect.w//2 - 10, y + h // 2)
                 surface.blit(text_surface, text_rect)
-            elif row[0] <= 0:
+            elif row.iloc[0] <= 0:
                 x = x_center - w
                 bar_rect = pygame.Rect(x, y, w, h)
                 pygame.draw.rect(surface, "red", bar_rect)
-                text_surface = self.font.render(f'{idx}({round(row[0], 2)})',
+                text_surface = self.font.render(f'{idx}({round(row.iloc[0], 2)})',
                                                 True, 'black')
                 text_rect = text_surface.get_rect(center=(0, 0))
                 text_rect.center = (x_center + text_rect.w//2 + 10, y + h // 2)

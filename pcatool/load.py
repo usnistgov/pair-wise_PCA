@@ -3,6 +3,8 @@ from pcatool.commonlibs import \
     urllib, os, shutil, tqdm
 
 DEFAULT_DATASET = 'BenchmarkData'
+ACS_DATASET = "ACSDaTaExcerpts"
+
 
 def reporthook(count, block_size, total_size):
     global start_time

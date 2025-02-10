@@ -6,7 +6,7 @@ class TitleView(BaseView):
         super().__init__(start_x, start_y, width, height)
         self.texts = ['PCA Inspector Tool',
                       'For',
-                      'NIST Diverse Communities Data Excerpts']
+                      'NIST Benchmark Data']
         self.texts_w = []
         self.font = font_map[40]
         for t in self.texts:
