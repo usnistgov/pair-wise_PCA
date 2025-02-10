@@ -69,7 +69,8 @@ class PCAGridView(BaseView):
         # print('Update')
         # for col in pcad.columns:
         #     pcad[col] = min_max_scaling(pcad[col])
-
+        rect_obj = pygame.Rect(self.x, self.y, self.w, self.h)
+        pygame.draw.rect(surface, 'white', rect_obj)
         font = pygame.font.Font('freesansbold.ttf', 32)
         for ri, pc_i in enumerate(self.pca_data.columns):
             for ci, pc_j in enumerate(self.pca_data.columns):

@@ -1,8 +1,10 @@
 from pcatool.commonlibs import \
     Path, time, sys, zipfile, \
     urllib, os, shutil, tqdm
-from distutils.dir_util import copy_tree
-DEFAULT_DATASET = 'diverse_communities_data_excerpts'
+
+DEFAULT_DATASET = 'BenchmarkData'
+ACS_DATASET = "ACSDaTaExcerpts"
+
 
 def reporthook(count, block_size, total_size):
     global start_time
@@ -35,7 +37,7 @@ def download_data(root: Path, name: Path, download: bool):
     if not name.exists():
         print(f"{name} does not exist.")
         zip_path = Path(root.parent, 'data.zip')
-        version = "2.2.0"
+        version = "2.4.0"
 
         version_v = f"v{version}"
         sdnist_version = DEFAULT_DATASET
@@ -78,7 +80,7 @@ def download_data(root: Path, name: Path, download: bool):
             copy_from_path = str(Path(extract_path, sdnist_version))
             copy_to_path = str(Path(root))
             print(f"Copying {copy_from_path} to {copy_to_path} ...")
-            copy_tree(copy_from_path, copy_to_path)
+            shutil.copytree(copy_from_path, copy_to_path)
             shutil.rmtree(extract_path)
         else:
             raise ValueError(f"{name} does not exist.")

@@ -1,7 +1,7 @@
 from pcatool.views.entry.title import TitleView
 from pcatool.views.entry.options import OptionsView
 from pcatool.views.entry.featureset import FeatureSetView
-from pcatool.load import DEFAULT_DATASET
+from pcatool.load import DEFAULT_DATASET, ACS_DATASET
 
 # Main View Class
 import pandas as pd
@@ -19,7 +19,7 @@ class EntryView:
         self.feature_sets = feature_sets
         # self.data_path = target_data_path
         font_map = get_font_map()
-        data_dict_path = Path(DEFAULT_DATASET, 'data_dictionary.json')
+        data_dict_path = Path(DEFAULT_DATASET, ACS_DATASET, 'data_dictionary.json')
         self.data_dict = dict()
         if data_dict_path.exists():
             with data_dict_path.open('r') as f:
@@ -70,6 +70,8 @@ class EntryView:
             for e in pygame.event.get():
                 if e.type == pygame.QUIT:
                     self.exit = True
+                elif e.type == pygame.WINDOWDISPLAYCHANGED:
+                    self.update()
                 elif e.type == pygame.MOUSEBUTTONDOWN:
                     self.mouse_sel = True
                     self.mouse_pos = e.pos
@@ -109,7 +111,6 @@ class EntryView:
                     self.fbrowser_view.selected_file
                 if Path(self.options_view.deid_data_file).exists():
                     data = pd.read_csv(Path(self.options_view.deid_data_file))
-                    print('loaded data')
                     # drop columns with Unnamed
                     data = data.loc[:, ~data.columns.str.contains('Unnamed')]
                     self.data_features = list(data.columns)

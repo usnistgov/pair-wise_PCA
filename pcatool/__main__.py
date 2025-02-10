@@ -11,26 +11,22 @@ from pcatool.views import EntryView, pygame_gui
 import matplotlib
 import pcatool.util as util
 from pcatool.pca import FeatureSet
-from pcatool.load import download_data, DEFAULT_DATASET
+from pcatool.load import download_data, DEFAULT_DATASET, ACS_DATASET
 # matplotlib.style.use(["seaborn-deep", "seaborn-notebook"])
 
 
 class TestDatasetName(Enum):
     NONE = 1
-    GA_NC_SC_10Y_PUMS = 2
-    NY_PA_10Y_PUMS = 3
-    IL_OH_10Y_PUMS = 4
-    taxi2016 = 5
-    taxi2020 = 6
-    ma2019 = 7
-    tx2019 = 8
-    national2019 = 9
+    ma2019 = 2
+    tx2019 = 3
+    national2019 = 4
 
 target_name_to_state = {
     "ma2019": "massachusetts",
     "tx2019": "texas",
     "national2019": "national"
 }
+
 def run():
     bundled_featureset = {
         'all': FeatureSet.all,
@@ -41,10 +37,10 @@ def run():
     bundled_datasets = {"MA": TestDatasetName.ma2019,
                         "TX": TestDatasetName.tx2019,
                         "NATIONAL": TestDatasetName.national2019}
-    DATA_DIR = Path(DEFAULT_DATASET)
+    DATA_DIR = Path(DEFAULT_DATASET, ACS_DATASET)
     TAR_DATA_PATH = Path(DATA_DIR, 'national', f'national2019.csv')
     if not DATA_DIR.exists():
-        download_data(DATA_DIR, TAR_DATA_PATH, True)
+        download_data(Path(DEFAULT_DATASET), TAR_DATA_PATH, True)
 
     pygame.init()
     disp_info = pygame.display.Info()

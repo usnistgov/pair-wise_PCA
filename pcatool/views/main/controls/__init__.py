@@ -16,7 +16,7 @@ from pcatool.views import BaseView, \
 from pcatool.views.components import \
     HeaderView, ButtonGroup
 import pcatool.util as util
-from pcatool.load import DEFAULT_DATASET
+from pcatool.load import DEFAULT_DATASET, ACS_DATASET
 
 
 class ControlView(BaseView):
@@ -61,7 +61,7 @@ class ControlView(BaseView):
                                                    component_definitions,
                                                    font_map)
 
-        DATA_DICT_PATH = Path(f'{DEFAULT_DATASET}/data_dictionary.json')
+        DATA_DICT_PATH = Path(f'{DEFAULT_DATASET}/{ACS_DATASET}/data_dictionary.json')
         with open(DATA_DICT_PATH) as f:
             self.ddict = json.load(f)
 

@@ -18,19 +18,20 @@ def transform(data: pd.DataFrame, schema):
         if "values" in desc:
             if "has_null" in desc:
                 null_val = desc["null_value"]
-                data[c] = data[c].replace(null_val, -1)
+                data[c] = np.where(data[c] == null_val, -1, data[c])
+                # data[c] = data[c].replace(null_val, -1)
         elif "min" in desc:
             if "has_null" in desc:
                 null_val = desc["null_value"]
                 nna_mask = data[~data[c].isin(['N'])].index  # not na mask
                 if c == 'PINCP':
-                    data[c] = data[c].replace(null_val, 9999999)
+                    data[c] = np.where(data[c] == null_val, 9999999, data[c])
                 elif c == 'POVPIP':
-                    data[c] = data[c].replace(null_val, 999)
+                    data[c] = np.where(data[c] == null_val, 999, data[c])
         if c == 'PUMA':
             data[c] = data[c].astype(pd.CategoricalDtype(desc["values"])).cat.codes
             if "N" in desc['values']:
-                data[c] = data[c].replace(0, -1)
+                data[c] = np.where(data[c] == 0, -1, data[c])
         else:
             data[c] = pd.to_numeric(data[c])
     return data
