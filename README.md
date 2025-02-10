@@ -46,7 +46,7 @@ NOTE: The ***pca>*** string in the commands below indicates that the user is in 
 
 7. Now run the pca tool using command *pcatool*:
     ```
-   (venv)pca> pctool
+   (venv)pca> pcatool
     ```
    
 

@@ -17,11 +17,6 @@ from pcatool.load import download_data, DEFAULT_DATASET
 
 class TestDatasetName(Enum):
     NONE = 1
-    GA_NC_SC_10Y_PUMS = 2
-    NY_PA_10Y_PUMS = 3
-    IL_OH_10Y_PUMS = 4
-    taxi2016 = 5
-    taxi2020 = 6
     ma2019 = 7
     tx2019 = 8
     national2019 = 9
