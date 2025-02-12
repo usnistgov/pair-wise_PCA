@@ -1,3 +1,5 @@
+![Python Version](https://img.shields.io/badge/python-3.9%20%7C%203.10%20%7C%203.11-blue)
+
 ## Pairwise PCA Inspection Tool
 This project is a part of [SDNist project](https://github.com/usnistgov/SDNist)
 
